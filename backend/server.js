@@ -10,15 +10,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
+// MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log('MongoDB Connected'))
-.catch(err => console.log('MongoDB connection error:', err));
-
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log('MongoDB connection error:', err));
 
 // Root route
 app.get('/', (req, res) => {
-    res.send('Event Registration Backend is running');
+  res.send('Event Registration Backend is running');
 });
 
 // Routes
